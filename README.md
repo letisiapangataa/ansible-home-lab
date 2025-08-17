@@ -1,6 +1,8 @@
 # 🚀 Ansible Home Lab (ALP)
 
-This repository contains a minimal, ready-to-run **Ansible home lab** showcasing configuration management across Linux and Windows nodes.
+A minimal, ready-to-run **Ansible home lab** showcasing configuration management across Linux and Windows nodes.
+
+For a lab overview: https://letisiapangataa.github.io/posts/home-lab-with-ansible/
 
 ## What's inside
 - `ansible.cfg` — local Ansible configuration
