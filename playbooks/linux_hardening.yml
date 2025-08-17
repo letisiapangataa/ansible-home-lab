@@ -1,0 +1,26 @@
+---
+- name: Baseline hardening for Linux servers
+  hosts: linux_servers
+  become: yes
+  tasks:
+    - name: Ensure common packages are present
+      ansible.builtin.apt:
+        name: "{{ common_packages }}"
+        state: present
+        update_cache: yes
+
+    - name: Ensure UFW is installed
+      ansible.builtin.apt:
+        name: ufw
+        state: present
+
+    - name: Enable UFW with default policy
+      community.general.ufw:
+        state: enabled
+        policy: "{{ firewall_default_policy }}"
+
+    - name: Allow SSH
+      community.general.ufw:
+        rule: allow
+        port: "{{ ssh_port }}"
+        proto: tcp

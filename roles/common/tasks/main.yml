@@ -1,0 +1,5 @@
+---
+# Example role placeholder. Add reusable tasks here.
+- name: Echo common role execution
+  ansible.builtin.debug:
+    msg: "Running common role tasks..."

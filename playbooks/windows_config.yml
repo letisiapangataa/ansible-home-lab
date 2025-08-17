@@ -1,0 +1,14 @@
+---
+- name: Configure Windows servers
+  hosts: windows_servers
+  gather_facts: no
+  vars:
+    win_local_user: "labadmin"
+  tasks:
+    - name: Ensure local admin user exists (use vaulted password)
+      ansible.windows.win_user:
+        name: "{{ win_local_user }}"
+        password: "{{ win_local_admin_password | default('CHANGEME_VAULTED') }}"
+        groups:
+          - Administrators
+        state: present

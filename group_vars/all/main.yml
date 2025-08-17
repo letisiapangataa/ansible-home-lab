@@ -1,0 +1,7 @@
+# Global non-sensitive defaults for all hosts
+common_packages:
+  - curl
+  - vim
+  - htop
+ssh_port: 22
+firewall_default_policy: deny
